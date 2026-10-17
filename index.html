@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riza Balci | Projects</title>
+<meta name="description" content="Riza Balci: marketplace operations and automation. Ops tooling for Amazon, bol, Otto and ManoMano, Telegram bots, and single-file web apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f1e8; --card:#fffdf8; --ink:#14213d; --ink-2:#3d4a63; --muted:#6b7488;
+  --line:#ddd5c4; --tag:#ece6d8; --accent:#d9541e; --green:#1f7a4d; --green-bg:#e3f1e8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11161f; --card:#18202c; --ink:#ece7dc; --ink-2:#c3c8d2; --muted:#8f97a6;
+    --line:#2b3546; --tag:#232c3a; --accent:#ff8a4c; --green:#5cc48d; --green-bg:#173326;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11161f; --card:#18202c; --ink:#ece7dc; --ink-2:#c3c8d2; --muted:#8f97a6;
+  --line:#2b3546; --tag:#232c3a; --accent:#ff8a4c; --green:#5cc48d; --green-bg:#173326;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"IBM Plex Sans Condensed","IBM Plex Sans",sans-serif;letter-spacing:-.01em;line-height:1.1;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+.bar{border-bottom:1px solid var(--line);position:sticky;top:0;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);z-index:5}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.brand{font-weight:600;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--accent)}
+.nav{display:flex;gap:18px;font-size:14px;color:var(--ink-2)}
+.nav a{text-decoration:none}.nav a:hover{color:var(--accent)}
+.theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:5px 10px;font:13px "IBM Plex Mono",monospace;cursor:pointer}
+@media (max-width:720px){.nav{display:none}}
+
+.hero{padding:72px 0 36px;display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:end}
+.kicker{font:500 13px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+.hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:700;margin:14px 0 18px}
+.hero p{font-size:clamp(17px,2vw,20px);color:var(--ink-2);margin:0;max-width:60ch}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-block;text-decoration:none;font:500 14px "IBM Plex Mono",monospace;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts div:last-child{border-bottom:0}
+.facts span{color:var(--muted);font:13px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:48px}}
+
+/* featured */
+.feature{display:grid;grid-template-columns:1.3fr 1fr;background:var(--ink);color:var(--paper);border-radius:22px;overflow:hidden;margin:20px 0 10px}
+.feature .t{padding:34px}
+.feature .tag{font:500 12px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.feature h2{font-size:clamp(28px,4vw,40px);margin:10px 0 12px}
+.feature p{margin:0;color:color-mix(in srgb,var(--paper) 80%,transparent)}
+.feature .links .btn{background:transparent;color:var(--paper);border-color:color-mix(in srgb,var(--paper) 35%,transparent)}
+.feature .links .btn.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.feature ul{list-style:none;margin:0;padding:34px;display:grid;gap:10px;background:color-mix(in srgb,var(--paper) 7%,transparent);align-content:center}
+.feature li{display:flex;gap:10px;align-items:baseline;font-size:15px}
+.feature li b{font:500 13px "IBM Plex Mono",monospace;color:var(--accent);min-width:2ch}
+@media (max-width:860px){.feature{grid-template-columns:1fr}}
+
+section{padding:44px 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:16px;margin-bottom:22px}
+.head h2{font-size:clamp(28px,4vw,40px)}
+.head p{margin:6px 0 0;color:var(--ink-2)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:13px "IBM Plex Mono",monospace;border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:6px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.search{font:14px "IBM Plex Sans",sans-serif;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);min-width:220px}
+
+.group{margin-top:34px}
+.group h3{font-size:22px;display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.group h3 small{font:13px "IBM Plex Mono",monospace;color:var(--muted)}
+.group > p{margin:0 0 16px;color:var(--ink-2);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.card .top{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.card h4{margin:0;font:600 17px "IBM Plex Sans",sans-serif;line-height:1.25}
+.live{font:500 11px "IBM Plex Mono",monospace;color:var(--green);background:var(--green-bg);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.card p{margin:0;color:var(--ink-2);font-size:14.5px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font:12px "IBM Plex Mono",monospace;background:var(--tag);border-radius:6px;padding:1px 8px;color:var(--ink-2)}
+.card .acts{display:flex;gap:14px;font:500 13px "IBM Plex Mono",monospace;margin-top:4px}
+.card .acts a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
+.empty{color:var(--muted);padding:20px 0}
+
+.cta{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
+.cta h2{font-size:clamp(26px,3.6vw,36px)}
+.cta p{margin:10px 0 0;color:var(--ink-2)}
+.cta .links{flex-direction:column;margin:0}
+.cta .btn{text-align:center}
+@media (max-width:760px){.cta{grid-template-columns:1fr;padding:26px 20px}}
+footer{padding:28px 0 44px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">Riza Balci<span>.</span></a>
+    <nav class="nav" aria-label="Sections"><a href="#ops">Marketplace ops</a><a href="#projects">All projects</a><a href="#contact">Contact</a></nav>
+    <button class="theme" id="theme" type="button" aria-label="Toggle colour theme">theme</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <div class="kicker">Marketplace operations · automation</div>
+      <h1>I build the tools I wish every seller had.</h1>
+      <p>Over ten years running Amazon and European marketplaces, now with automation at the centre: ops dashboards on Apps Script and Looker Studio, Telegram bots on GitHub Actions, and fast single-file web apps. Everything here is open source.</p>
+      <div class="links">
+        <a class="btn main" href="mailto:balci.riza@gmail.com?subject=Hello%20Riza">balci.riza@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/rizabalci/" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/rizabalci">GitHub</a>
+      </div>
+    </div>
+    <div class="facts" aria-label="At a glance">
+      <div><span>Focus</span><b>Amazon SFP, 3PL ops</b></div>
+      <div><span>Marketplaces</span><b>Amazon, bol, Otto, ManoMano</b></div>
+      <div><span>Stack</span><b>Apps Script, Looker, Python, n8n, Claude</b></div>
+      <div><span>Public projects</span><b id="count">37</b></div>
+      <div><span>Based in</span><b>Vienna, remote</b></div>
+    </div>
+  </div>
+
+  <div class="wrap" id="ops">
+    <div class="feature">
+      <div class="t">
+        <div class="tag">Featured · client work, anonymised</div>
+        <h2>Marketplace Ops Toolkit</h2>
+        <p>Ten tools built and run in production for a multi-brand seller shipping from several 3PL warehouses: account health collectors, Prime and SFP dashboards, a drafts-only action engine and four Looker Studio reports. Read-only on marketplaces, nothing sent without a human.</p>
+        <div class="links">
+          <a class="btn main" href="https://rizabalci.github.io/apps-script-marketplace-ops/">Read the case studies</a>
+          <a class="btn" href="https://github.com/rizabalci/apps-script-marketplace-ops">Code</a>
+        </div>
+      </div>
+      <ul>
+        <li><b>01</b>Daily account health from SP-API, bol and Otto</li>
+        <li><b>02</b>Prime badge check per product and postcode</li>
+        <li><b>03</b>Account health page with roll-off dates</li>
+        <li><b>04</b>Weekly SFP KPIs with headroom in orders</li>
+        <li><b>05</b>Action engine with drafted partner emails</li>
+        <li><b>06</b>Four Looker Studio reports, 3PL scorecard included</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="head">
+        <div><h2>All projects</h2><p>Every public repository, grouped by what it does. Green means there is a live site you can open.</p></div>
+        <div class="tools">
+          <input class="search" id="q" type="search" placeholder="Search projects" aria-label="Search projects">
+        </div>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by group" id="filters"></div>
+      <div id="groups"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Need this for your own marketplace business?</h2>
+          <p>I set up monitoring, dashboards and automation for sellers running Amazon and European marketplaces from their own or 3PL warehouses. Happy to talk through what you have and what would save you the most time.</p>
+        </div>
+        <div class="links">
+          <a class="btn main" href="mailto:balci.riza@gmail.com?subject=Marketplace%20ops%20tooling">balci.riza@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/rizabalci/" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/rizabalci">github.com/rizabalci</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Riza Balci · All projects are open source on GitHub.</div></footer>
+
+<script>
+var GH='https://github.com/rizabalci/', PG='https://rizabalci.github.io/';
+var GROUPS=[
+ {id:'ops',name:'Marketplace operations',blurb:'Production tooling for Amazon, bol, Otto and ManoMano sellers, cleaned into templates.'},
+ {id:'bots',name:'Automation and bots',blurb:'Scheduled scanners and Telegram bots that run free on GitHub Actions.'},
+ {id:'vienna',name:'Vienna guides',blurb:'Mobile-first guides to the city I live in.'},
+ {id:'travel',name:'Travel atlases and planners',blurb:'Big, self-contained place atlases and trip tools.'},
+ {id:'life',name:'Personal tools',blurb:'Small apps I use myself every week.'}
+];
+// [repo, title, description, group, chips, live]
+var P=[
+ ['apps-script-marketplace-ops','Marketplace Ops Toolkit','Index and case studies for the ten marketplace ops templates.','ops',['Apps Script','Looker Studio'],true],
+ ['apps-script-marketplace-health-collector','Marketplace Health Collector','Daily account health from Amazon SP-API, bol and Otto APIs into Google Sheets, with a job heartbeat and alerts.','ops',['Apps Script','SP-API'],false],
+ ['apps-script-prime-badge-check','Prime Badge Check','Web dashboard for Amazon Prime badge and delivery promise per product and postcode, with watchdog and alerts.','ops',['Apps Script','HtmlService'],false],
+ ['apps-script-account-health-dashboard','Account Health Dashboard','Seller-fulfilled health for one marketplace, with rolling-window roll-off estimates and actions.','ops',['Apps Script'],false],
+ ['apps-script-sfp-weekly-dashboard','SFP Weekly Dashboard','Weekly Seller Fulfilled Prime KPIs, tier headroom in orders and a freshness strip.','ops',['Apps Script'],false],
+ ['apps-script-ops-action-engine','Ops Action Engine','Turns dashboard findings into owner-assigned actions and drafts-only partner emails.','ops',['Apps Script','Gmail'],false],
+ ['looker-studio-marketplace-account-health','Account Health Report','Looker Studio report: one page per marketplace with latest reading, headroom and history.','ops',['Looker Studio'],false],
+ ['looker-studio-sfp-us-dashboard','SFP US Control Room','Looker Studio: on-time per size tier, late packages by cause and weekly trend.','ops',['Looker Studio'],false],
+ ['looker-studio-3pl-scorecard','3PL Warehouse Scorecard','Looker Studio: same-day dispatch, late reasons, label-to-scan timing and cost per parcel per site.','ops',['Looker Studio'],false],
+ ['looker-studio-landed-cost-monitor','Landed Cost Monitor','Looker Studio: per-unit COGS, shipping and fees by marketplace and channel, with outliers and missing COGS.','ops',['Looker Studio'],false],
+ ['fba-margin-calculator','FBA Margin Calculator','Amazon FBA margin calculator.','ops',['Python'],false],
+
+ ['worldwide-flight-bot','Worldwide Flight Bot','Daily round-trip flight deal scanner from Vienna and Bratislava to 596 cities worldwide, with Telegram alerts.','bots',['Python','GitHub Actions','Telegram'],true],
+ ['beach-holiday-bot-telegram','Beach Holiday Bot','Beach holiday deal finder with Telegram delivery and a live page.','bots',['Telegram','HTML'],true],
+ ['concert-alert-bot','Concert Alert Bot','Telegram bot for European concert alerts from Vienna, scored by distance and importance, with on-sale reminders.','bots',['Python','GitHub Actions','Telegram'],false],
+ ['concert-radar','Concert Radar','European concert finder from Vienna across 27 cities, filtered by distance, genre and travel tier.','bots',['JavaScript','Claude API'],true],
+ ['ai-morning-briefing','AI Morning Briefing','A 5-minute plain-English AI news digest that scores each story and flags what it means for e-commerce.','bots',['HTML'],true],
+ ['ai-side-incomes-bot','AI Side Income Bot','Three step-by-step AI side income playbooks every day, with Telegram delivery and progress tracking.','bots',['Telegram','HTML'],true],
+ ['ai-side-income-bot','AI Side Income Feed','Daily influence feed on AI side income ideas.','bots',['HTML'],true],
+
+ ['vienna-events-hub','Wien Events Hub','Mobile-first Vienna event guide, bilingual English and German, dark mode, zero dependencies.','vienna',['HTML','JavaScript'],true],
+ ['swim-wien','Vienna Swim Dashboard','Swimming and sauna in Vienna: 55 venues with live occupancy, weather, opening hours, prices and transit routes.','vienna',['HTML','Live data'],true],
+ ['vienna-wellness','Vienna Wellness Guide','185+ wellness venues across Vienna: pools, spas, saunas, hammams. Offline-ready and installable.','vienna',['PWA','HTML'],true],
+ ['vienna-eats','Vienna Restaurant Guide','600 top-rated restaurants in Vienna in one fast guide.','vienna',['HTML'],true],
+ ['vienna-museum-guide','Vienna Museum Guide','Companion for the federal museums card in Vienna.','vienna',['HTML'],true],
+ ['musikverein-guide-2026','Musikverein 2026 Guide','41 curated concerts of the 2026 season with tier ratings, listening prep and calendar links.','vienna',['HTML'],true],
+ ['vienna-trip-planner','Vienna Trip Planner','Planner for a trip to Vienna.','vienna',['HTML'],true],
+
+ ['beautiful-austria','Beautiful Austria','2,217 places in Austria in one self-contained atlas, with weekend trips, a seasonal guide and maps.','travel',['Python','HTML'],true],
+ ['austria','Austria, curated','95 swimming lakes and 148 places to see, sorted by drive time.','travel',['HTML'],true],
+ ['beautiful-turkiye','Beautiful Türkiye','712 places across all 81 provinces, with visitor notes, nearest airport, 28 routes and a monthly guide.','travel',['Python','HTML'],true],
+ ['turkiye-atlas','Türkiye: Best Places','A guide to the best places to visit in Türkiye.','travel',['HTML'],true],
+ ['beautiful-slovakia','Beautiful Slovakia','652 places worth a detour in Slovakia, in one self-contained page.','travel',['HTML'],true],
+ ['city-atlas','City Atlas','Cities visited and on the wishlist, on one map.','travel',['HTML'],true],
+ ['remote-workspace','Remote Workspace','City research for remote work: where to base yourself and why.','travel',['HTML'],true],
+ ['builder-coliving-finder','Builder Coliving Finder','Finder for coliving spaces and builder residencies.','travel',['HTML'],true],
+
+ ['the-canon','The Canon','Watchlist of 246 essential films from IMDb Top 250 and Criterion-calibre classics, with filters and progress.','life',['HTML'],true],
+ ['riza-chef','Riza Chef','Turkish and Mediterranean recipe app.','life',['HTML'],true],
+ ['riza-health','Gym Tracker','Personal gym tracker and health dashboard.','life',['HTML'],true],
+ ['hobby-explorer','Hobby Explorer','A field dossier of new hobbies to try.','life',['HTML'],true]
+];
+(function(){
+  var root=document.documentElement,tb=document.getElementById('theme');
+  function cur(){var t=root.getAttribute('data-theme');return t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
+  tb.textContent=cur()==='dark'?'light':'dark';
+  tb.onclick=function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);tb.textContent=n==='dark'?'light':'dark';try{localStorage.setItem('theme',n);}catch(e){}};
+  document.getElementById('count').textContent=P.length;
+
+  var state={g:'all',q:''};
+  var fw=document.getElementById('filters');
+  [{id:'all',name:'All'}].concat(GROUPS).forEach(function(g){
+    var b=document.createElement('button');b.type='button';b.textContent=g.name+' ('+(g.id==='all'?P.length:P.filter(function(p){return p[3]===g.id;}).length)+')';
+    b.setAttribute('aria-pressed',g.id==='all'?'true':'false');
+    b.onclick=function(){state.g=g.id;[].forEach.call(fw.children,function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});render();};
+    fw.appendChild(b);
+  });
+  document.getElementById('q').addEventListener('input',function(e){state.q=e.target.value.toLowerCase();render();});
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    var out='',total=0;
+    GROUPS.forEach(function(g){
+      if(state.g!=='all'&&state.g!==g.id)return;
+      var items=P.filter(function(p){return p[3]===g.id&&(!state.q||(p[1]+' '+p[2]+' '+p[4].join(' ')+' '+p[0]).toLowerCase().indexOf(state.q)>=0);});
+      if(!items.length)return; total+=items.length;
+      out+='<div class="group"><h3>'+esc(g.name)+' <small>'+items.length+'</small></h3><p>'+esc(g.blurb)+'</p><div class="grid">';
+      items.forEach(function(p){
+        out+='<article class="card"><div class="top"><h4>'+esc(p[1])+'</h4>'+(p[5]?'<span class="live">live</span>':'')+'</div><p>'+esc(p[2])+'</p><div class="chips">'+p[4].map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div><div class="acts">'+(p[5]?'<a href="'+PG+p[0]+'/">Open</a>':'')+'<a href="'+GH+p[0]+'">Code</a></div></article>';
+      });
+      out+='</div></div>';
+    });
+    document.getElementById('groups').innerHTML=total?out:'<p class="empty">No project matches that search.</p>';
+  }
+  render();
+})();
+</script>
+</body>
+</html>
